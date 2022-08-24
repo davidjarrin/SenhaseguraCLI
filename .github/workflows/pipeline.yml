@@ -25,8 +25,6 @@ jobs:
       - name: Run DSM CLI as Running Belt
         env:
           APPLICATION: ${{ secrets.APPLICATION }}
-          SYSTEM: ""
-          ENVIRONMENT: ""
         run: |
           chmod 777 dsm
-          ./dsm runb --application $APPLICATION --system "" --environment "" --config .config.yml --tool-name github
+          ./dsm runb --app-name $APPLICATION --system "" --environment "" --config .config.yml --tool-name github
