@@ -23,5 +23,5 @@ jobs:
         run: |
           dsm runb \
             --app-name $APPLICATION \
-            --config .config.yml \
+            --config .config.yaml \
             --tool-name github \
