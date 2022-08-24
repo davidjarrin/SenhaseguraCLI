@@ -21,17 +21,3 @@ jobs:
 
       - name: PRUEBA HOLA MUNDO
         run: echo Hello, world!
-        
-      - name: Run DSM CLI as Running Belt
-        env:
-          APPLICATION: ${{ secrets.APPLICATION }}
-          SYSTEM: ${{ secrets.SYSTEM }}
-          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
-        run: |
-          dsm runb \
-            --app-name $APPLICATION \
-            --system $SYSTEM \
-            --environment $ENVIRONMENT \
-            --config .config.yml \
-            --tool-name github \
-          source .runb.vars && rm .runb.vars
