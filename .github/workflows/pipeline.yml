@@ -27,4 +27,5 @@ jobs:
           APPLICATION: ${{ secrets.APPLICATION }}
         run: |
           chmod 777 dsm
-          ./dsm runb --app-name $APPLICATION --system "" --environment "" --config .config.yml --tool-name github
+          chmod 777 .config.yaml
+          ./dsm runb --app-name $APPLICATION --system "" --environment "" --config .config.yaml --tool-name github
