@@ -14,12 +14,10 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v2
 
       - name: Run DSM CLI as Running Belt
         env:
           APPLICATION: ${{ secrets.APPLICATION }}
-        run:
-          dsm runb --app-name $APPLICATION --config .config.yaml --tool-name github
+        run: dsm runb --app-name $APPLICATION --config .config.yaml --tool-name github
