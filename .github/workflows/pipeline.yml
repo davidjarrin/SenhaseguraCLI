@@ -28,4 +28,4 @@ jobs:
         run: |
           chmod 777 dsm
           chmod 777 .config.yaml
-          ./dsm runb --app-name $APPLICATION --system "" --environment "" --config .config.yaml --tool-name github
+          ./dsm runb --app-name $APPLICATION --system "Production" --environment "Production" --config .config.yaml --tool-name github
