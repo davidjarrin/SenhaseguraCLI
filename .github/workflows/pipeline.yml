@@ -29,4 +29,4 @@ jobs:
           ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: |
           chmod 777 dsm
-          ./dsm runb --app-name $APPLICATION --config .config.yml --tool-name github
+          ./dsm runb --app-name $APPLICATION --system $SYSTEM --environment $ENVIRONMENT --config .config.yml --tool-name github
