@@ -1,25 +1,16 @@
-# This file is an example to demonstrate the usage of DSM CLI inside a GitHub pipeline
-# Make sure to upload the executable and the configuration files to your project
-# For more information on its usage, please visit https://docs.senhasegura.io/
-
-name: senhasegura CLI CI/CD
-
 on:
-  push:
-    branches:
-      - main
-
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
 
 jobs:
-  build:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
+  print-username:
+    runs-on: ubuntu-latest
 
-      - name: Run DSM CLI as Running Belt
-        env:
-          APPLICATION: ${{ secrets.APPLICATION }}
-          SYSTEM: ${{ secrets.SYSTEM }}
-          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
-        run: echo The username is $APPLICATION
+    steps:
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.username }}
