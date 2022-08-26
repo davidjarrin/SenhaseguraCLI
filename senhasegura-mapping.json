@@ -1,0 +1,8 @@
+{
+  "key_value": [
+    {
+      "name": "SECRET_VARIABLE_INSERT_TEST",
+      "fields": ["RANDOM_TEXT"]
+    }
+  ]
+}
