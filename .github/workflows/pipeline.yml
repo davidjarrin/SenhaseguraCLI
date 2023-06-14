@@ -31,5 +31,10 @@ jobs:
           chmod 777 dsm
           chmod 777 .config.yaml
           ./dsm runb --app-name $APPLICATION --system $SYSTEM --environment $ENVIRONMENT --config .config.yaml --tool-name github
-          cat .runb.vars | awk -F"'" '{print $2}'
-          export $(cat .runb.vars | awk -F"'" '{print $2}')
+          
+      - name: SHOWING VARIABLES ENVIROMENT
+        run: cat .runb.vars | awk -F"'" '{print $2}'
+        
+      - name: CREATING VARIABLES ENVIROMENT
+        run: export $(cat .runb.vars | awk -F"'" '{print $2}')
+          
