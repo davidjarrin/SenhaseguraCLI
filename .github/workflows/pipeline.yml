@@ -33,8 +33,8 @@ jobs:
           ./dsm runb --app-name $APPLICATION --system $SYSTEM --environment $ENVIRONMENT --config .config.yaml --tool-name github
           
       - name: SHOWING VARIABLES ENVIROMENT
-        run: cat .runb.vars | awk -F"'" '{print $2}' > tmp.vars
+        run: cat .runb.vars | awk -F"'" '{print $2}' > .tmp.vars
         
       - name: CREATING VARIABLES ENVIROMENT
-        run: source tmp.vars  
+        run: source .tmp.vars  
           
