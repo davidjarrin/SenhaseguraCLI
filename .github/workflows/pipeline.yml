@@ -28,7 +28,5 @@ jobs:
           SYSTEM: ${{ secrets.SYSTEM }}
           ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: |
-          chmod 777 dsm
-          chmod 777 .config.yaml
-          ./dsm runb --app-name $APPLICATION --system $SYSTEM --environment $ENVIRONMENT --config .config.yaml --tool-name github || cat .runb.vars | awk -F"'" '{print $2}' > .tmp.vars || source .tmp.vars
+          ./dsm runb -a $APPLICATION -e $ENVIRONMENT -s $SYSTEM -c .config.yaml -t linux -v
           
