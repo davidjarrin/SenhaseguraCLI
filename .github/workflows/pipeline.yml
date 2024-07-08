@@ -29,7 +29,7 @@ jobs:
           ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: |
           chmod +x dsm 
-          ./dsm runb -a $APPLICATION -e $ENVIRONMENT -s $SYSTEM -c .config.yaml -t linux -v
+          ./dsm runb --app-name $APPLICATION -e $ENVIRONMENT -s $SYSTEM -c .config.yaml -t linux -v
           cat .runb.vars
           
           
